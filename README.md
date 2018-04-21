@@ -3,10 +3,10 @@ Fully Convolutional Neural Network for Text Detection in Scene/Document with Scr
 
 ## 1. Overview
 This repo contains two types of deep neural networks, 
-- pixel-level Text Detection Classification Network (TDCN) with specializations in 
-  - SceneText, e.g. a street-view image.
-  - DocumentText, e.g. a scanned letter.
-- page-level Script ID Classification Network (SICN)
+- **pixel-level Text Detection Classification Network (TDCN)** with specializations in 
+  - `SceneText`, e.g. a street-view image.
+  - `DocumentText`, e.g. a scanned letter.
+- **page-level Script ID Classification Network (SICN)**
 
 where TDCN models are mainly based on the ICCV17 paper [**Self-organized Text Detection with Minimal Post-processing via Border Learning**](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Self-Organized_Text_Detection_ICCV_2017_paper.pdf).
 
@@ -14,7 +14,6 @@ All models are trained with the Keras deep nerual network library with the Tenso
 
 ## 2. Structure
 This repo contains the following data
-
 - `data`: sample image data for testing.
 - `lib` : core model definitions and util functions.
 - `model` : pretrained model weights.
@@ -24,8 +23,17 @@ This repo contains the following data
 - `notebook` : Python2 demo notebook.
 - `bin` : Python2/3 command-line tool.
 
-## 3. Usage
-### 3.1 Basic Models
+## 3. Dependency
+This repo depends on the core deep learning libraries
+- `Keras`: >=2.0.7
+- `TensorFlow`: >=1.1.0
+
+and image processing libraries
+- `OpenCV-Python`: >=3.1.0
+- `Skimage`: >= 0.13.0
+
+## 4. Usage
+### 34.1 Basic Models
 ```python
 # 1. TDCN
 textDet_model = textDetCore.create_textDet_model()
@@ -35,7 +43,7 @@ scriptID_model = textDetCore.create_scriptID_model()
 scriptID_model.load_weights( scriptID_weight )
 ```
 
-### 3.2 Simple Decoder
+### 4.2 Simple Decoder
 Simple decoder is written w.r.t. the use case of text detection for a document image or a text input image where text regions can be expressed as a set of rectangular bounding boxes.
 ```python
 det_results = simple_decoder( 
