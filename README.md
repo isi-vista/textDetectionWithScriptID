@@ -4,8 +4,8 @@ Fully Convolutional Neural Network for Text Detection in Scene/Document with Scr
 ## 1. Overview
 This repo contains two types of deep neural networks, 
 - **pixel-level Text Detection Classification Network (TDCN)** with specializations in 
-  - `SceneText`, e.g. a street-view image.
-  - `DocumentText`, e.g. a scanned letter.
+  - **Word-Level** `SceneText`, e.g. a street-view image.
+  - **Line-Level** `DocumentText`, e.g. a scanned letter.
   
   It classifies each pixel in an input image into one for the following three categories:
   
