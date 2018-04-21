@@ -6,11 +6,32 @@ This repo contains two types of deep neural networks,
 - **pixel-level Text Detection Classification Network (TDCN)** with specializations in 
   - `SceneText`, e.g. a street-view image.
   - `DocumentText`, e.g. a scanned letter.
+  
+  It classifies each pixel in an input image into one for the following three categories:
+  
+  |**class index**| **class name** | **color channel**| **Description**|
+  |:-------------:|:-------------:|:-------------:|:-------------:|
+  | 0 | NonText | Red | Any non-text content |
+  | 1 | Border  | Green | Pixels on text borders |
+  | 2 | Text    | Blue | Text Pixels |
+  
 - **page-level Script ID Classification Network (SICN)**
+
+  It classifies an input image into one of the following categories: 
+  
+  | **scriptID index** | **scriptID name** | **Country** |
+  |:------------------:|:-----------------:|:-----------:|
+  | 0 | NonText | N/A |
+  | 1 | Latin | US, UK, etc. |
+  | 2 | Hebrew | Israel |
+  | 3 | Cyrillic | Russia, Ukraine, etc. | 
+  | 4 | Arabic | Iran, Saudi Arabia, etc. |
+  | 5 | Chinese | China, HongKong, etc. |
+  | 6 | TextButUnknown | N/A |
 
 where TDCN models are mainly based on the ICCV17 paper [**Self-organized Text Detection with Minimal Post-processing via Border Learning**](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Self-Organized_Text_Detection_ICCV_2017_paper.pdf).
 
-All models are trained with the Keras deep nerual network library with the TensorFlow backend.
+All models are trained with the `Keras` deep nerual network library with the `TensorFlow` backend.
 
 ## 2. Structure
 This repo contains the following data
