@@ -2,13 +2,15 @@
 Fully Convolutional Neural Network for Text Detection in Scene/Document with Script ID supports.
 
 ## 1. Overview
-This repo contains two deep networks, 
-- pixel-level Text Detection Classification Network (TDCN)
+This repo contains two types of deep neural networks, 
+- pixel-level Text Detection Classification Network (TDCN) with specializations in 
+  - SceneText, e.g. a street-view image.
+  - DocumentText, e.g. a scanned letter.
 - page-level Script ID Classification Network (SICN)
 
-where TDCN is mainly based on the ICCV17 paper [**Self-organized Text Detection with Minimal Post-processing via Border Learning**](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Self-Organized_Text_Detection_ICCV_2017_paper.pdf).
+where TDCN models are mainly based on the ICCV17 paper [**Self-organized Text Detection with Minimal Post-processing via Border Learning**](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Self-Organized_Text_Detection_ICCV_2017_paper.pdf).
 
-Both models are trained with the Keras deep nerual network library with the TensorFlow backend. 
+All models are trained with the Keras deep nerual network library with the TensorFlow backend.
 
 ## 2. Structure
 This repo contains the following data
@@ -16,6 +18,9 @@ This repo contains the following data
 - `data`: sample image data for testing.
 - `lib` : core model definitions and util functions.
 - `model` : pretrained model weights.
+  - `textDetSceneModel.h5`: pretrained TDCN weight for scene text detection
+  - `textDetDocumModel.h5`: pretrained TDCN weight for document text detection
+  - `scriptIDModel.h5`: pretrained SICN weight
 - `notebook` : Python2 demo notebook.
 - `bin` : Python2/3 command-line tool.
 
