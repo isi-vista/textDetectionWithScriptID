@@ -207,8 +207,8 @@ def estimate_dominant_fontsize( img, dark_text=None, verbose=0 ) :
             if ( height not in rel_lut ) :
                 rel_lut[ height ] = 0
             rel_lut[ height ] += width
-    keys = rel_lut.keys()
-    vals = rel_lut.values()
+    keys = list(rel_lut)
+    vals = list(rel_lut.values())
     vall = np.sum( vals )
     obs = np.zeros( np.max(keys)+1)
     for k, v in zip( keys, vals ) :
