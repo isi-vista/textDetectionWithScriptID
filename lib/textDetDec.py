@@ -104,9 +104,9 @@ def parse_detection_results( url, output_lut, text_proba=None, script_proba=None
         proba = bbox_lut['proba']
         lh  = bbox_lut['lineheight']
         contrast = bbox_lut['contrast']
-        if ( bbox_lut.has_key('imgfile') ) :
+        if ( 'imgfile' in bbox_lut ) :
             reg_img = cv2.imread( bbox_lut['imgfile'], 1 )[...,::-1]
-        elif ( bbox_lut.has_key('jpgbuf')) :
+        elif ( 'jpgbuf' in bbox_lut ) :
             reg_img = uncompress_jpeg_buffer( bbox_lut )
         reg_pts = get_bbox_polygon( bbox_lut )
         if ( show_region ) :
