@@ -81,7 +81,7 @@ def visualize_text_proba_map( img, y, scriptID=None ) :
     pyplot.title('Overlaid')
     pyplot.axis('off')
 
-def parse_detection_results( url, output_lut, text_proba=None, script_proba=None) :
+def parse_detection_results( url, output_lut, text_proba=None, script_proba=None, show_region=True) :
     img = read_image( url )
     ih, iw = img.shape[:2]
     resize_factor = output_lut['resize']
@@ -105,9 +105,10 @@ def parse_detection_results( url, output_lut, text_proba=None, script_proba=None
         elif ( bbox_lut.has_key('jpgbuf')) :
             reg_img = uncompress_jpeg_buffer( bbox_lut )
         reg_pts = get_bbox_polygon( bbox_lut )
-        pyplot.figure()
-        pyplot.imshow( reg_img )
-        pyplot.title('Reg#{:d} : Pr={:.2f} Lh={:.2f} Contrast={:.2f}'.format( idx, proba, lh, contrast ) )
+        if ( show_region ) :
+            pyplot.figure()
+            pyplot.imshow( reg_img )
+            pyplot.title('Reg#{:d} : Pr={:.2f} Lh={:.2f} Contrast={:.2f}'.format( idx, proba, lh, contrast ) )
         cv2.polylines( debug, [reg_pts], True, (0,255,0), thickness=5 )
     pyplot.figure( figsize=(10,10))
     pyplot.imshow( debug )
