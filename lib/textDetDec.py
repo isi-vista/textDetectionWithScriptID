@@ -4,6 +4,7 @@ This file defines the required util functions for text detection pre- and post-p
 NOTE:
 '''
 from __future__ import print_function
+from future.utils import iteritems
 from keras.applications.vgg16 import preprocess_input
 from scipy.spatial import distance as dist
 import numpy as np
@@ -95,7 +96,7 @@ def parse_detection_results( url, output_lut, text_proba=None, script_proba=None
     if ( script_proba is not None ) and ( text_proba is not None ):
         scriptID = get_topK_scriptID( script_proba )
         visualize_text_proba_map( img, text_proba, scriptID )
-    for key, val in output_lut.iteritems() :
+    for key, val in iteritems(output_lut) :
         if ( 'Pr' in key ) :
             print('{:>20} = {:.2f}'.format(key, val))
     debug = np.array( img, dtype='uint8' )
@@ -146,7 +147,7 @@ def parse_paper_size( image_width, image_height ) :
     i_ratio = float(image_width)/image_height
     iou = 0
     sofar_best = None
-    for name, (pw, ph) in paperLut.iteritems() :
+    for name, (pw, ph) in iteritems(paperLut) :
         p_ratio = float(pw)/ph
         p_iou = min(i_ratio, p_ratio)/max(i_ratio, p_ratio)
         if ( p_iou > iou ) :
