@@ -14,7 +14,10 @@ from PIL import Image
 from datetime import datetime
 import requests
 import os
-from StringIO import StringIO
+try :
+    from StringIO import StringIO
+except :
+    from io import StringIO
 from matplotlib import pyplot
 from skimage.morphology import dilation
 from skimage.filters import threshold_otsu, threshold_niblack,  threshold_sauvola
