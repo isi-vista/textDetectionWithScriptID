@@ -1,0 +1,626 @@
+{
+    "Pr(Arabic)": 3.7271248797021518e-18, 
+    "Pr(Chinese)": 0.96906238794326782, 
+    "Pr(Cyrillic)": 1.2731623057654932e-15, 
+    "Pr(Hebrew)": 7.1088974821793133e-14, 
+    "Pr(Latin)": 0.030125033110380173, 
+    "Pr(NonText)": 1.8938688622620172e-22, 
+    "Pr(TextButUnknown)": 0.00081260246224701405, 
+    "bboxes": [
+        {
+            "cntx": [
+                30, 
+                249, 
+                249, 
+                30
+            ], 
+            "cnty": [
+                2, 
+                2, 
+                39, 
+                39
+            ], 
+            "contrast": 33.846589808645874, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-000.png", 
+            "lineheight": 37.0, 
+            "proba": 0.69459885358810425
+        }, 
+        {
+            "cntx": [
+                315, 
+                561, 
+                561, 
+                315
+            ], 
+            "cnty": [
+                8, 
+                8, 
+                45, 
+                45
+            ], 
+            "contrast": 31.100307120294143, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-001.png", 
+            "lineheight": 37.0, 
+            "proba": 0.63741999864578247
+        }, 
+        {
+            "cntx": [
+                886, 
+                983, 
+                983, 
+                886
+            ], 
+            "cnty": [
+                26, 
+                26, 
+                55, 
+                55
+            ], 
+            "contrast": 25.906645589776701, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-002.png", 
+            "lineheight": 29.0, 
+            "proba": 0.65846937894821167
+        }, 
+        {
+            "cntx": [
+                969, 
+                1141, 
+                1141, 
+                969
+            ], 
+            "cnty": [
+                16, 
+                16, 
+                115, 
+                115
+            ], 
+            "contrast": 60.246071493465685, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-003.png", 
+            "lineheight": 99.0, 
+            "proba": 0.72597295045852661
+        }, 
+        {
+            "cntx": [
+                669, 
+                953, 
+                953, 
+                669
+            ], 
+            "cnty": [
+                131, 
+                131, 
+                177, 
+                177
+            ], 
+            "contrast": 48.578226630117072, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-004.png", 
+            "lineheight": 46.0, 
+            "proba": 0.87970846891403198
+        }, 
+        {
+            "cntx": [
+                98, 
+                418, 
+                418, 
+                98
+            ], 
+            "cnty": [
+                224, 
+                224, 
+                270, 
+                270
+            ], 
+            "contrast": 57.147618968469793, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-005.png", 
+            "lineheight": 46.0, 
+            "proba": 0.88472598791122437
+        }, 
+        {
+            "cntx": [
+                633, 
+                980, 
+                980, 
+                633
+            ], 
+            "cnty": [
+                353, 
+                353, 
+                399, 
+                399
+            ], 
+            "contrast": 58.415372226565502, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-006.png", 
+            "lineheight": 46.0, 
+            "proba": 0.93805587291717529
+        }, 
+        {
+            "cntx": [
+                631, 
+                978, 
+                978, 
+                631
+            ], 
+            "cnty": [
+                397, 
+                397, 
+                443, 
+                443
+            ], 
+            "contrast": 64.044284353879263, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-007.png", 
+            "lineheight": 46.0, 
+            "proba": 0.93052542209625244
+        }, 
+        {
+            "cntx": [
+                147, 
+                944, 
+                944, 
+                147
+            ], 
+            "cnty": [
+                486, 
+                486, 
+                559, 
+                559
+            ], 
+            "contrast": 47.118226696488179, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-009.png", 
+            "lineheight": 73.0, 
+            "proba": 0.90852081775665283
+        }, 
+        {
+            "cntx": [
+                70, 
+                1049, 
+                1049, 
+                70
+            ], 
+            "cnty": [
+                526, 
+                526, 
+                608, 
+                608
+            ], 
+            "contrast": 52.669549117511451, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-010.png", 
+            "lineheight": 82.0, 
+            "proba": 0.93172889947891235
+        }, 
+        {
+            "cntx": [
+                38, 
+                1046, 
+                1046, 
+                38
+            ], 
+            "cnty": [
+                569, 
+                569, 
+                655, 
+                655
+            ], 
+            "contrast": 55.804584543755112, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-011.png", 
+            "lineheight": 86.0, 
+            "proba": 0.92444229125976562
+        }, 
+        {
+            "cntx": [
+                39, 
+                1043, 
+                1043, 
+                39
+            ], 
+            "cnty": [
+                614, 
+                614, 
+                697, 
+                697
+            ], 
+            "contrast": 51.657470376468709, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-012.png", 
+            "lineheight": 83.0, 
+            "proba": 0.92376810312271118
+        }, 
+        {
+            "cntx": [
+                57, 
+                305, 
+                305, 
+                57
+            ], 
+            "cnty": [
+                664, 
+                664, 
+                711, 
+                711
+            ], 
+            "contrast": 51.168971480911594, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-013.png", 
+            "lineheight": 47.0, 
+            "proba": 0.90787971019744873
+        }, 
+        {
+            "cntx": [
+                65, 
+                1041, 
+                1041, 
+                65
+            ], 
+            "cnty": [
+                702, 
+                702, 
+                784, 
+                784
+            ], 
+            "contrast": 50.069127937564765, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-014.png", 
+            "lineheight": 82.0, 
+            "proba": 0.91851687431335449
+        }, 
+        {
+            "cntx": [
+                32, 
+                1044, 
+                1044, 
+                32
+            ], 
+            "cnty": [
+                743, 
+                743, 
+                830, 
+                830
+            ], 
+            "contrast": 53.91523583400717, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-015.png", 
+            "lineheight": 87.0, 
+            "proba": 0.91145610809326172
+        }, 
+        {
+            "cntx": [
+                32, 
+                1032, 
+                1032, 
+                32
+            ], 
+            "cnty": [
+                788, 
+                788, 
+                874, 
+                874
+            ], 
+            "contrast": 52.317672572749828, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-016.png", 
+            "lineheight": 86.0, 
+            "proba": 0.89574813842773438
+        }, 
+        {
+            "cntx": [
+                45, 
+                515, 
+                515, 
+                45
+            ], 
+            "cnty": [
+                839, 
+                839, 
+                898, 
+                898
+            ], 
+            "contrast": 53.307064813797254, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-018.png", 
+            "lineheight": 59.0, 
+            "proba": 0.91253751516342163
+        }, 
+        {
+            "cntx": [
+                58, 
+                1039, 
+                1039, 
+                58
+            ], 
+            "cnty": [
+                877, 
+                877, 
+                963, 
+                963
+            ], 
+            "contrast": 50.237298122933403, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-019.png", 
+            "lineheight": 86.0, 
+            "proba": 0.9078601598739624
+        }, 
+        {
+            "cntx": [
+                29, 
+                1039, 
+                1039, 
+                29
+            ], 
+            "cnty": [
+                921, 
+                921, 
+                1008, 
+                1008
+            ], 
+            "contrast": 53.786501063854061, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-020.png", 
+            "lineheight": 87.0, 
+            "proba": 0.91406601667404175
+        }, 
+        {
+            "cntx": [
+                29, 
+                1041, 
+                1041, 
+                29
+            ], 
+            "cnty": [
+                963, 
+                963, 
+                1053, 
+                1053
+            ], 
+            "contrast": 54.122675065932867, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-021.png", 
+            "lineheight": 90.0, 
+            "proba": 0.91053116321563721
+        }, 
+        {
+            "cntx": [
+                26, 
+                913, 
+                913, 
+                26
+            ], 
+            "cnty": [
+                1008, 
+                1008, 
+                1094, 
+                1094
+            ], 
+            "contrast": 54.535182760450773, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-022.png", 
+            "lineheight": 86.0, 
+            "proba": 0.92146950960159302
+        }, 
+        {
+            "cntx": [
+                49, 
+                1034, 
+                1034, 
+                49
+            ], 
+            "cnty": [
+                1055, 
+                1055, 
+                1142, 
+                1142
+            ], 
+            "contrast": 56.707123331080751, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-023.png", 
+            "lineheight": 87.0, 
+            "proba": 0.91671180725097656
+        }, 
+        {
+            "cntx": [
+                21, 
+                1032, 
+                1032, 
+                21
+            ], 
+            "cnty": [
+                1097, 
+                1097, 
+                1187, 
+                1187
+            ], 
+            "contrast": 59.221009857982608, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-024.png", 
+            "lineheight": 90.0, 
+            "proba": 0.92356574535369873
+        }, 
+        {
+            "cntx": [
+                22, 
+                779, 
+                779, 
+                22
+            ], 
+            "cnty": [
+                1144, 
+                1144, 
+                1221, 
+                1221
+            ], 
+            "contrast": 56.422302090135013, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-026.png", 
+            "lineheight": 77.0, 
+            "proba": 0.89081120491027832
+        }, 
+        {
+            "cntx": [
+                39, 
+                1032, 
+                1032, 
+                39
+            ], 
+            "cnty": [
+                1184, 
+                1184, 
+                1279, 
+                1279
+            ], 
+            "contrast": 52.618869947095114, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-027.png", 
+            "lineheight": 95.0, 
+            "proba": 0.89091747999191284
+        }, 
+        {
+            "cntx": [
+                10, 
+                1030, 
+                1030, 
+                10
+            ], 
+            "cnty": [
+                1224, 
+                1224, 
+                1323, 
+                1323
+            ], 
+            "contrast": 53.927961759263113, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-028.png", 
+            "lineheight": 99.0, 
+            "proba": 0.88426101207733154
+        }, 
+        {
+            "cntx": [
+                12, 
+                1030, 
+                1030, 
+                12
+            ], 
+            "cnty": [
+                1270, 
+                1270, 
+                1365, 
+                1365
+            ], 
+            "contrast": 54.443631868171977, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-029.png", 
+            "lineheight": 95.0, 
+            "proba": 0.87178164720535278
+        }, 
+        {
+            "cntx": [
+                8, 
+                1027, 
+                1027, 
+                8
+            ], 
+            "cnty": [
+                1314, 
+                1314, 
+                1409, 
+                1409
+            ], 
+            "contrast": 54.389091723660322, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-030.png", 
+            "lineheight": 95.0, 
+            "proba": 0.86652469635009766
+        }, 
+        {
+            "cntx": [
+                8, 
+                1008, 
+                1008, 
+                8
+            ], 
+            "cnty": [
+                1359, 
+                1359, 
+                1455, 
+                1455
+            ], 
+            "contrast": 55.745436771325835, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-031.png", 
+            "lineheight": 96.0, 
+            "proba": 0.847084641456604
+        }, 
+        {
+            "cntx": [
+                14, 
+                1023, 
+                1023, 
+                14
+            ], 
+            "cnty": [
+                1404, 
+                1404, 
+                1496, 
+                1496
+            ], 
+            "contrast": 54.467384415522837, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-032.png", 
+            "lineheight": 92.0, 
+            "proba": 0.82598143815994263
+        }, 
+        {
+            "cntx": [
+                16, 
+                651, 
+                651, 
+                16
+            ], 
+            "cnty": [
+                1451, 
+                1451, 
+                1525, 
+                1525
+            ], 
+            "contrast": 53.839306519582358, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-033.png", 
+            "lineheight": 74.0, 
+            "proba": 0.74992674589157104
+        }, 
+        {
+            "cntx": [
+                31, 
+                1020, 
+                1020, 
+                31
+            ], 
+            "cnty": [
+                1492, 
+                1492, 
+                1591, 
+                1591
+            ], 
+            "contrast": 50.946021240991541, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-034.png", 
+            "lineheight": 99.0, 
+            "proba": 0.70327174663543701
+        }, 
+        {
+            "cntx": [
+                6, 
+                1023, 
+                1023, 
+                6
+            ], 
+            "cnty": [
+                1536, 
+                1536, 
+                1631, 
+                1631
+            ], 
+            "contrast": 44.901260718733312, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-035.png", 
+            "lineheight": 95.0, 
+            "proba": 0.72855323553085327
+        }, 
+        {
+            "cntx": [
+                25, 
+                119, 
+                119, 
+                25
+            ], 
+            "cnty": [
+                1588, 
+                1588, 
+                1630, 
+                1630
+            ], 
+            "contrast": 53.426221814567803, 
+            "imgfile": "./result_full/acf66ea4a0963d160d51a4ec95754cd9/acf66ea4a0963d160d51a4ec95754cd9-036.png", 
+            "lineheight": 42.0, 
+            "proba": 0.58280950784683228
+        }
+    ], 
+    "filename": "../data/JAP_jinkenyougobu070400.jpg", 
+    "md5": "acf66ea4a0963d160d51a4ec95754cd9", 
+    "resize": 1.5
+}

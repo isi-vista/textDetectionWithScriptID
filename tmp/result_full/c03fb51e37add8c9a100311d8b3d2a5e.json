@@ -1,0 +1,734 @@
+{
+    "Pr(Arabic)": 1.4987211471861883e-08, 
+    "Pr(Chinese)": 0.84411454200744629, 
+    "Pr(Cyrillic)": 1.1091363376181107e-05, 
+    "Pr(Hebrew)": 3.9168957300717011e-05, 
+    "Pr(Latin)": 0.14877232909202576, 
+    "Pr(NonText)": 1.1020591557386883e-11, 
+    "Pr(TextButUnknown)": 0.0070628458634018898, 
+    "bboxes": [
+        {
+            "cntx": [
+                1113, 
+                1360, 
+                1360, 
+                1113
+            ], 
+            "cnty": [
+                3, 
+                3, 
+                41, 
+                41
+            ], 
+            "contrast": 106.75779413633387, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-000.png", 
+            "lineheight": 38.0, 
+            "proba": 0.6128460168838501
+        }, 
+        {
+            "cntx": [
+                50, 
+                450, 
+                450, 
+                50
+            ], 
+            "cnty": [
+                5, 
+                5, 
+                43, 
+                43
+            ], 
+            "contrast": 77.975555089071932, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-001.png", 
+            "lineheight": 38.0, 
+            "proba": 0.78121393918991089
+        }, 
+        {
+            "cntx": [
+                1503, 
+                1596, 
+                1596, 
+                1503
+            ], 
+            "cnty": [
+                6, 
+                6, 
+                39, 
+                39
+            ], 
+            "contrast": 68.071418686055097, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-002.png", 
+            "lineheight": 33.0, 
+            "proba": 0.78848522901535034
+        }, 
+        {
+            "cntx": [
+                276, 
+                677, 
+                677, 
+                276
+            ], 
+            "cnty": [
+                288, 
+                288, 
+                338, 
+                338
+            ], 
+            "contrast": 83.236245064864733, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-003.png", 
+            "lineheight": 50.0, 
+            "proba": 0.90673434734344482
+        }, 
+        {
+            "cntx": [
+                1016, 
+                1479, 
+                1479, 
+                1016
+            ], 
+            "cnty": [
+                300, 
+                300, 
+                347, 
+                347
+            ], 
+            "contrast": 86.786293006044119, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-004.png", 
+            "lineheight": 47.0, 
+            "proba": 0.91879606246948242
+        }, 
+        {
+            "cntx": [
+                353, 
+                1495, 
+                1495, 
+                353
+            ], 
+            "cnty": [
+                358, 
+                358, 
+                417, 
+                417
+            ], 
+            "contrast": 74.250709899331838, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-005.png", 
+            "lineheight": 59.0, 
+            "proba": 0.91007465124130249
+        }, 
+        {
+            "cntx": [
+                272, 
+                1491, 
+                1491, 
+                272
+            ], 
+            "cnty": [
+                414, 
+                414, 
+                470, 
+                470
+            ], 
+            "contrast": 78.857554240951075, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-006.png", 
+            "lineheight": 56.0, 
+            "proba": 0.89691722393035889
+        }, 
+        {
+            "cntx": [
+                267, 
+                1494, 
+                1494, 
+                267
+            ], 
+            "cnty": [
+                468, 
+                468, 
+                531, 
+                531
+            ], 
+            "contrast": 75.094580134161291, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-007.png", 
+            "lineheight": 63.0, 
+            "proba": 0.91484463214874268
+        }, 
+        {
+            "cntx": [
+                268, 
+                1495, 
+                1495, 
+                268
+            ], 
+            "cnty": [
+                525, 
+                525, 
+                589, 
+                589
+            ], 
+            "contrast": 74.425344645836489, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-008.png", 
+            "lineheight": 64.0, 
+            "proba": 0.91840845346450806
+        }, 
+        {
+            "cntx": [
+                269, 
+                1492, 
+                1492, 
+                269
+            ], 
+            "cnty": [
+                583, 
+                583, 
+                643, 
+                643
+            ], 
+            "contrast": 77.08744596321101, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-009.png", 
+            "lineheight": 60.0, 
+            "proba": 0.90838319063186646
+        }, 
+        {
+            "cntx": [
+                267, 
+                1488, 
+                1488, 
+                267
+            ], 
+            "cnty": [
+                638, 
+                638, 
+                698, 
+                698
+            ], 
+            "contrast": 72.369297513981621, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-010.png", 
+            "lineheight": 60.0, 
+            "proba": 0.91201454401016235
+        }, 
+        {
+            "cntx": [
+                268, 
+                1489, 
+                1489, 
+                268
+            ], 
+            "cnty": [
+                694, 
+                694, 
+                754, 
+                754
+            ], 
+            "contrast": 77.404523582333013, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-011.png", 
+            "lineheight": 60.0, 
+            "proba": 0.90557646751403809
+        }, 
+        {
+            "cntx": [
+                268, 
+                1489, 
+                1489, 
+                268
+            ], 
+            "cnty": [
+                751, 
+                751, 
+                811, 
+                811
+            ], 
+            "contrast": 74.401534948730017, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-012.png", 
+            "lineheight": 60.0, 
+            "proba": 0.9151340126991272
+        }, 
+        {
+            "cntx": [
+                268, 
+                1488, 
+                1488, 
+                268
+            ], 
+            "cnty": [
+                808, 
+                808, 
+                867, 
+                867
+            ], 
+            "contrast": 75.576843236665283, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-013.png", 
+            "lineheight": 59.0, 
+            "proba": 0.9038468599319458
+        }, 
+        {
+            "cntx": [
+                266, 
+                1487, 
+                1487, 
+                266
+            ], 
+            "cnty": [
+                865, 
+                865, 
+                924, 
+                924
+            ], 
+            "contrast": 76.292456958201882, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-014.png", 
+            "lineheight": 59.0, 
+            "proba": 0.91080582141876221
+        }, 
+        {
+            "cntx": [
+                266, 
+                1485, 
+                1485, 
+                266
+            ], 
+            "cnty": [
+                920, 
+                920, 
+                979, 
+                979
+            ], 
+            "contrast": 76.162863094929037, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-015.png", 
+            "lineheight": 59.0, 
+            "proba": 0.91045242547988892
+        }, 
+        {
+            "cntx": [
+                266, 
+                1484, 
+                1484, 
+                266
+            ], 
+            "cnty": [
+                977, 
+                977, 
+                1036, 
+                1036
+            ], 
+            "contrast": 79.897655720458118, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-016.png", 
+            "lineheight": 59.0, 
+            "proba": 0.91801333427429199
+        }, 
+        {
+            "cntx": [
+                264, 
+                1486, 
+                1486, 
+                264
+            ], 
+            "cnty": [
+                1032, 
+                1032, 
+                1092, 
+                1092
+            ], 
+            "contrast": 75.585926396103545, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-017.png", 
+            "lineheight": 60.0, 
+            "proba": 0.90331381559371948
+        }, 
+        {
+            "cntx": [
+                264, 
+                1485, 
+                1485, 
+                264
+            ], 
+            "cnty": [
+                1089, 
+                1089, 
+                1149, 
+                1149
+            ], 
+            "contrast": 79.451550634262944, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-018.png", 
+            "lineheight": 60.0, 
+            "proba": 0.92026638984680176
+        }, 
+        {
+            "cntx": [
+                263, 
+                1485, 
+                1485, 
+                263
+            ], 
+            "cnty": [
+                1146, 
+                1146, 
+                1206, 
+                1206
+            ], 
+            "contrast": 74.863430267144565, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-019.png", 
+            "lineheight": 60.0, 
+            "proba": 0.91038554906845093
+        }, 
+        {
+            "cntx": [
+                260, 
+                1486, 
+                1486, 
+                260
+            ], 
+            "cnty": [
+                1202, 
+                1202, 
+                1265, 
+                1265
+            ], 
+            "contrast": 78.265766100241194, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-020.png", 
+            "lineheight": 63.0, 
+            "proba": 0.91206145286560059
+        }, 
+        {
+            "cntx": [
+                263, 
+                1485, 
+                1485, 
+                263
+            ], 
+            "cnty": [
+                1258, 
+                1258, 
+                1317, 
+                1317
+            ], 
+            "contrast": 74.982212292092981, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-021.png", 
+            "lineheight": 59.0, 
+            "proba": 0.90867716073989868
+        }, 
+        {
+            "cntx": [
+                260, 
+                1485, 
+                1485, 
+                260
+            ], 
+            "cnty": [
+                1313, 
+                1313, 
+                1378, 
+                1378
+            ], 
+            "contrast": 75.722918938965833, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-022.png", 
+            "lineheight": 65.0, 
+            "proba": 0.90152579545974731
+        }, 
+        {
+            "cntx": [
+                263, 
+                1053, 
+                1053, 
+                263
+            ], 
+            "cnty": [
+                1372, 
+                1372, 
+                1426, 
+                1426
+            ], 
+            "contrast": 77.143110930700502, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-023.png", 
+            "lineheight": 54.0, 
+            "proba": 0.8834260106086731
+        }, 
+        {
+            "cntx": [
+                1015, 
+                1477, 
+                1477, 
+                1015
+            ], 
+            "cnty": [
+                1381, 
+                1381, 
+                1431, 
+                1431
+            ], 
+            "contrast": 82.561622771341803, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-024.png", 
+            "lineheight": 50.0, 
+            "proba": 0.89350217580795288
+        }, 
+        {
+            "cntx": [
+                257, 
+                1483, 
+                1483, 
+                257
+            ], 
+            "cnty": [
+                1425, 
+                1425, 
+                1489, 
+                1489
+            ], 
+            "contrast": 72.840591913663005, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-025.png", 
+            "lineheight": 64.0, 
+            "proba": 0.90037155151367188
+        }, 
+        {
+            "cntx": [
+                257, 
+                1480, 
+                1480, 
+                257
+            ], 
+            "cnty": [
+                1482, 
+                1482, 
+                1547, 
+                1547
+            ], 
+            "contrast": 75.665620451102001, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-026.png", 
+            "lineheight": 65.0, 
+            "proba": 0.88561338186264038
+        }, 
+        {
+            "cntx": [
+                256, 
+                1482, 
+                1482, 
+                256
+            ], 
+            "cnty": [
+                1539, 
+                1539, 
+                1603, 
+                1603
+            ], 
+            "contrast": 70.454683191668394, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-027.png", 
+            "lineheight": 64.0, 
+            "proba": 0.88953107595443726
+        }, 
+        {
+            "cntx": [
+                255, 
+                1484, 
+                1484, 
+                255
+            ], 
+            "cnty": [
+                1595, 
+                1595, 
+                1658, 
+                1658
+            ], 
+            "contrast": 77.144457174260666, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-028.png", 
+            "lineheight": 63.0, 
+            "proba": 0.88585692644119263
+        }, 
+        {
+            "cntx": [
+                260, 
+                1046, 
+                1046, 
+                260
+            ], 
+            "cnty": [
+                1654, 
+                1654, 
+                1709, 
+                1709
+            ], 
+            "contrast": 78.95195911195691, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-029.png", 
+            "lineheight": 55.0, 
+            "proba": 0.89624518156051636
+        }, 
+        {
+            "cntx": [
+                253, 
+                1480, 
+                1480, 
+                253
+            ], 
+            "cnty": [
+                1708, 
+                1708, 
+                1772, 
+                1772
+            ], 
+            "contrast": 76.25310954946265, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-030.png", 
+            "lineheight": 64.0, 
+            "proba": 0.88508820533752441
+        }, 
+        {
+            "cntx": [
+                257, 
+                1475, 
+                1475, 
+                257
+            ], 
+            "cnty": [
+                1766, 
+                1766, 
+                1826, 
+                1826
+            ], 
+            "contrast": 76.90736500601659, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-031.png", 
+            "lineheight": 60.0, 
+            "proba": 0.88010662794113159
+        }, 
+        {
+            "cntx": [
+                251, 
+                1477, 
+                1477, 
+                251
+            ], 
+            "cnty": [
+                1822, 
+                1822, 
+                1887, 
+                1887
+            ], 
+            "contrast": 76.723093704569266, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-032.png", 
+            "lineheight": 65.0, 
+            "proba": 0.8777880072593689
+        }, 
+        {
+            "cntx": [
+                257, 
+                1076, 
+                1076, 
+                257
+            ], 
+            "cnty": [
+                1880, 
+                1880, 
+                1935, 
+                1935
+            ], 
+            "contrast": 79.519104242986074, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-033.png", 
+            "lineheight": 55.0, 
+            "proba": 0.86431705951690674
+        }, 
+        {
+            "cntx": [
+                250, 
+                1478, 
+                1478, 
+                250
+            ], 
+            "cnty": [
+                1934, 
+                1934, 
+                1999, 
+                1999
+            ], 
+            "contrast": 72.148933124524362, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-034.png", 
+            "lineheight": 65.0, 
+            "proba": 0.83402466773986816
+        }, 
+        {
+            "cntx": [
+                252, 
+                1476, 
+                1476, 
+                252
+            ], 
+            "cnty": [
+                1990, 
+                1990, 
+                2053, 
+                2053
+            ], 
+            "contrast": 74.381355878353062, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-035.png", 
+            "lineheight": 63.0, 
+            "proba": 0.84173786640167236
+        }, 
+        {
+            "cntx": [
+                1057, 
+                1553, 
+                1553, 
+                1057
+            ], 
+            "cnty": [
+                2024, 
+                2024, 
+                2187, 
+                2187
+            ], 
+            "contrast": 75.684005150129607, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-036.png", 
+            "lineheight": 163.0, 
+            "proba": 0.57764220237731934
+        }, 
+        {
+            "cntx": [
+                262, 
+                466, 
+                466, 
+                262
+            ], 
+            "cnty": [
+                2054, 
+                2054, 
+                2092, 
+                2092
+            ], 
+            "contrast": 80.854103709663207, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-037.png", 
+            "lineheight": 38.0, 
+            "proba": 0.79918414354324341
+        }, 
+        {
+            "cntx": [
+                1303, 
+                1460, 
+                1460, 
+                1303
+            ], 
+            "cnty": [
+                2109, 
+                2109, 
+                2195, 
+                2195
+            ], 
+            "contrast": 67.102770345455212, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-040.png", 
+            "lineheight": 86.0, 
+            "proba": 0.55561375617980957
+        }, 
+        {
+            "cntx": [
+                1424, 
+                1653, 
+                1653, 
+                1424
+            ], 
+            "cnty": [
+                2126, 
+                2126, 
+                2198, 
+                2198
+            ], 
+            "contrast": 74.637235690687788, 
+            "imgfile": "./result_full/c03fb51e37add8c9a100311d8b3d2a5e/c03fb51e37add8c9a100311d8b3d2a5e-042.png", 
+            "lineheight": 72.0, 
+            "proba": 0.70577746629714966
+        }
+    ], 
+    "filename": "../data/KOR_fax1a.jpg", 
+    "md5": "c03fb51e37add8c9a100311d8b3d2a5e", 
+    "resize": 1.0
+}

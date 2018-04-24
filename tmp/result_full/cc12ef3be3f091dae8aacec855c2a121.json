@@ -1,0 +1,464 @@
+{
+    "Pr(Arabic)": 5.711874723202115e-11, 
+    "Pr(Chinese)": 0.90992456674575806, 
+    "Pr(Cyrillic)": 1.6439338779150603e-08, 
+    "Pr(Hebrew)": 8.4260292965154804e-08, 
+    "Pr(Latin)": 0.085271142423152924, 
+    "Pr(NonText)": 2.0372394634975144e-13, 
+    "Pr(TextButUnknown)": 0.0048041627742350101, 
+    "bboxes": [
+        {
+            "cntx": [
+                53, 
+                620, 
+                620, 
+                53
+            ], 
+            "cnty": [
+                23, 
+                23, 
+                77, 
+                77
+            ], 
+            "contrast": 67.362223469937263, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-000.png", 
+            "lineheight": 54.0, 
+            "proba": 0.86279308795928955
+        }, 
+        {
+            "cntx": [
+                634, 
+                877, 
+                877, 
+                634
+            ], 
+            "cnty": [
+                110, 
+                110, 
+                152, 
+                152
+            ], 
+            "contrast": 67.541482458261825, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-001.png", 
+            "lineheight": 42.0, 
+            "proba": 0.87587875127792358
+        }, 
+        {
+            "cntx": [
+                59, 
+                123, 
+                123, 
+                59
+            ], 
+            "cnty": [
+                171, 
+                171, 
+                204, 
+                204
+            ], 
+            "contrast": 81.569816773711409, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-002.png", 
+            "lineheight": 33.0, 
+            "proba": 0.86715102195739746
+        }, 
+        {
+            "cntx": [
+                97, 
+                918, 
+                918, 
+                97
+            ], 
+            "cnty": [
+                236, 
+                236, 
+                286, 
+                286
+            ], 
+            "contrast": 70.7378394639383, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-003.png", 
+            "lineheight": 50.0, 
+            "proba": 0.92102426290512085
+        }, 
+        {
+            "cntx": [
+                45, 
+                931, 
+                931, 
+                45
+            ], 
+            "cnty": [
+                268, 
+                268, 
+                319, 
+                319
+            ], 
+            "contrast": 65.363287771565808, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-004.png", 
+            "lineheight": 51.0, 
+            "proba": 0.89260756969451904
+        }, 
+        {
+            "cntx": [
+                56, 
+                159, 
+                159, 
+                56
+            ], 
+            "cnty": [
+                303, 
+                303, 
+                340, 
+                340
+            ], 
+            "contrast": 62.757826417339921, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-005.png", 
+            "lineheight": 37.0, 
+            "proba": 0.87763881683349609
+        }, 
+        {
+            "cntx": [
+                91, 
+                933, 
+                933, 
+                91
+            ], 
+            "cnty": [
+                368, 
+                368, 
+                423, 
+                423
+            ], 
+            "contrast": 67.400651015999202, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-006.png", 
+            "lineheight": 55.0, 
+            "proba": 0.91945397853851318
+        }, 
+        {
+            "cntx": [
+                46, 
+                914, 
+                914, 
+                46
+            ], 
+            "cnty": [
+                403, 
+                403, 
+                457, 
+                457
+            ], 
+            "contrast": 67.916921730116371, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-007.png", 
+            "lineheight": 54.0, 
+            "proba": 0.91564065217971802
+        }, 
+        {
+            "cntx": [
+                50, 
+                785, 
+                785, 
+                50
+            ], 
+            "cnty": [
+                438, 
+                438, 
+                489, 
+                489
+            ], 
+            "contrast": 61.410680549477455, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-008.png", 
+            "lineheight": 51.0, 
+            "proba": 0.89807605743408203
+        }, 
+        {
+            "cntx": [
+                87, 
+                907, 
+                907, 
+                87
+            ], 
+            "cnty": [
+                541, 
+                541, 
+                592, 
+                592
+            ], 
+            "contrast": 65.194120332901278, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-010.png", 
+            "lineheight": 51.0, 
+            "proba": 0.906394362449646
+        }, 
+        {
+            "cntx": [
+                47, 
+                292, 
+                292, 
+                47
+            ], 
+            "cnty": [
+                575, 
+                575, 
+                616, 
+                616
+            ], 
+            "contrast": 63.00833543309372, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-011.png", 
+            "lineheight": 41.0, 
+            "proba": 0.90685063600540161
+        }, 
+        {
+            "cntx": [
+                258, 
+                898, 
+                898, 
+                258
+            ], 
+            "cnty": [
+                578, 
+                578, 
+                625, 
+                625
+            ], 
+            "contrast": 68.05137634966141, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-012.png", 
+            "lineheight": 47.0, 
+            "proba": 0.92628943920135498
+        }, 
+        {
+            "cntx": [
+                40, 
+                904, 
+                904, 
+                40
+            ], 
+            "cnty": [
+                608, 
+                608, 
+                662, 
+                662
+            ], 
+            "contrast": 69.282475897017491, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-013.png", 
+            "lineheight": 54.0, 
+            "proba": 0.9256553053855896
+        }, 
+        {
+            "cntx": [
+                42, 
+                888, 
+                888, 
+                42
+            ], 
+            "cnty": [
+                644, 
+                644, 
+                694, 
+                694
+            ], 
+            "contrast": 65.500856053495994, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-014.png", 
+            "lineheight": 50.0, 
+            "proba": 0.91030234098434448
+        }, 
+        {
+            "cntx": [
+                41, 
+                903, 
+                903, 
+                41
+            ], 
+            "cnty": [
+                679, 
+                679, 
+                729, 
+                729
+            ], 
+            "contrast": 65.966628225370457, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-015.png", 
+            "lineheight": 50.0, 
+            "proba": 0.908957839012146
+        }, 
+        {
+            "cntx": [
+                40, 
+                900, 
+                900, 
+                40
+            ], 
+            "cnty": [
+                713, 
+                713, 
+                763, 
+                763
+            ], 
+            "contrast": 64.098792862210558, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-016.png", 
+            "lineheight": 50.0, 
+            "proba": 0.89802300930023193
+        }, 
+        {
+            "cntx": [
+                41, 
+                909, 
+                909, 
+                41
+            ], 
+            "cnty": [
+                747, 
+                747, 
+                797, 
+                797
+            ], 
+            "contrast": 64.938865520297398, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-017.png", 
+            "lineheight": 50.0, 
+            "proba": 0.89345699548721313
+        }, 
+        {
+            "cntx": [
+                40, 
+                924, 
+                924, 
+                40
+            ], 
+            "cnty": [
+                780, 
+                780, 
+                830, 
+                830
+            ], 
+            "contrast": 67.543716394773639, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-018.png", 
+            "lineheight": 50.0, 
+            "proba": 0.89221078157424927
+        }, 
+        {
+            "cntx": [
+                38, 
+                923, 
+                923, 
+                38
+            ], 
+            "cnty": [
+                815, 
+                815, 
+                865, 
+                865
+            ], 
+            "contrast": 62.737729296416418, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-020.png", 
+            "lineheight": 50.0, 
+            "proba": 0.87383031845092773
+        }, 
+        {
+            "cntx": [
+                47, 
+                259, 
+                259, 
+                47
+            ], 
+            "cnty": [
+                852, 
+                852, 
+                893, 
+                893
+            ], 
+            "contrast": 56.19594913404174, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-021.png", 
+            "lineheight": 41.0, 
+            "proba": 0.85520434379577637
+        }, 
+        {
+            "cntx": [
+                225, 
+                921, 
+                921, 
+                225
+            ], 
+            "cnty": [
+                854, 
+                854, 
+                899, 
+                899
+            ], 
+            "contrast": 65.095740619151698, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-022.png", 
+            "lineheight": 45.0, 
+            "proba": 0.85521519184112549
+        }, 
+        {
+            "cntx": [
+                41, 
+                906, 
+                906, 
+                41
+            ], 
+            "cnty": [
+                884, 
+                884, 
+                935, 
+                935
+            ], 
+            "contrast": 67.187970745506775, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-023.png", 
+            "lineheight": 51.0, 
+            "proba": 0.79449582099914551
+        }, 
+        {
+            "cntx": [
+                42, 
+                252, 
+                252, 
+                42
+            ], 
+            "cnty": [
+                922, 
+                922, 
+                963, 
+                963
+            ], 
+            "contrast": 63.157851729937157, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-025.png", 
+            "lineheight": 41.0, 
+            "proba": 0.67795032262802124
+        }, 
+        {
+            "cntx": [
+                222, 
+                918, 
+                918, 
+                222
+            ], 
+            "cnty": [
+                924, 
+                924, 
+                971, 
+                971
+            ], 
+            "contrast": 68.096740243650189, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-026.png", 
+            "lineheight": 47.0, 
+            "proba": 0.66164064407348633
+        }, 
+        {
+            "cntx": [
+                37, 
+                889, 
+                889, 
+                37
+            ], 
+            "cnty": [
+                954, 
+                954, 
+                1004, 
+                1004
+            ], 
+            "contrast": 63.744548308172284, 
+            "imgfile": "./result_full/cc12ef3be3f091dae8aacec855c2a121/cc12ef3be3f091dae8aacec855c2a121-027.png", 
+            "lineheight": 50.0, 
+            "proba": 0.78568315505981445
+        }
+    ], 
+    "filename": "../data/JAP_jacksonkawasemipg1.jpg", 
+    "md5": "cc12ef3be3f091dae8aacec855c2a121", 
+    "resize": 1.6071428571428572
+}

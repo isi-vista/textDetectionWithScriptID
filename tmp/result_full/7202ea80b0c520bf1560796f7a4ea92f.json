@@ -1,0 +1,428 @@
+{
+    "Pr(Arabic)": 6.8120825647000061e-10, 
+    "Pr(Chinese)": 0.9083784818649292, 
+    "Pr(Cyrillic)": 4.2910244246741058e-08, 
+    "Pr(Hebrew)": 1.642390969891494e-07, 
+    "Pr(Latin)": 0.08627784252166748, 
+    "Pr(NonText)": 8.6760248508080395e-13, 
+    "Pr(TextButUnknown)": 0.0053435862064361572, 
+    "bboxes": [
+        {
+            "cntx": [
+                65, 
+                887, 
+                887, 
+                65
+            ], 
+            "cnty": [
+                18, 
+                18, 
+                73, 
+                73
+            ], 
+            "contrast": 65.450456900789433, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-000.png", 
+            "lineheight": 55.0, 
+            "proba": 0.85261136293411255
+        }, 
+        {
+            "cntx": [
+                19, 
+                894, 
+                894, 
+                19
+            ], 
+            "cnty": [
+                51, 
+                51, 
+                106, 
+                106
+            ], 
+            "contrast": 69.268903787388368, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-001.png", 
+            "lineheight": 55.0, 
+            "proba": 0.74994629621505737
+        }, 
+        {
+            "cntx": [
+                17, 
+                894, 
+                894, 
+                17
+            ], 
+            "cnty": [
+                83, 
+                83, 
+                142, 
+                142
+            ], 
+            "contrast": 70.147413811429971, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-002.png", 
+            "lineheight": 59.0, 
+            "proba": 0.85031986236572266
+        }, 
+        {
+            "cntx": [
+                17, 
+                894, 
+                894, 
+                17
+            ], 
+            "cnty": [
+                121, 
+                121, 
+                175, 
+                175
+            ], 
+            "contrast": 66.853339696270226, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-003.png", 
+            "lineheight": 54.0, 
+            "proba": 0.88335961103439331
+        }, 
+        {
+            "cntx": [
+                20, 
+                886, 
+                886, 
+                20
+            ], 
+            "cnty": [
+                155, 
+                155, 
+                210, 
+                210
+            ], 
+            "contrast": 68.726817889181888, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-004.png", 
+            "lineheight": 55.0, 
+            "proba": 0.90230900049209595
+        }, 
+        {
+            "cntx": [
+                19, 
+                867, 
+                867, 
+                19
+            ], 
+            "cnty": [
+                189, 
+                189, 
+                243, 
+                243
+            ], 
+            "contrast": 69.310802079635621, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-005.png", 
+            "lineheight": 54.0, 
+            "proba": 0.91051119565963745
+        }, 
+        {
+            "cntx": [
+                35, 
+                885, 
+                885, 
+                35
+            ], 
+            "cnty": [
+                224, 
+                224, 
+                275, 
+                275
+            ], 
+            "contrast": 64.535148538496799, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-006.png", 
+            "lineheight": 51.0, 
+            "proba": 0.90334838628768921
+        }, 
+        {
+            "cntx": [
+                20, 
+                124, 
+                124, 
+                20
+            ], 
+            "cnty": [
+                260, 
+                260, 
+                301, 
+                301
+            ], 
+            "contrast": 54.76969549188896, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-007.png", 
+            "lineheight": 41.0, 
+            "proba": 0.71452957391738892
+        }, 
+        {
+            "cntx": [
+                59, 
+                875, 
+                875, 
+                59
+            ], 
+            "cnty": [
+                361, 
+                361, 
+                412, 
+                412
+            ], 
+            "contrast": 67.918341525738057, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-009.png", 
+            "lineheight": 51.0, 
+            "proba": 0.91784548759460449
+        }, 
+        {
+            "cntx": [
+                15, 
+                862, 
+                862, 
+                15
+            ], 
+            "cnty": [
+                394, 
+                394, 
+                445, 
+                445
+            ], 
+            "contrast": 72.39486508280892, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-010.png", 
+            "lineheight": 51.0, 
+            "proba": 0.92533326148986816
+        }, 
+        {
+            "cntx": [
+                11, 
+                876, 
+                876, 
+                11
+            ], 
+            "cnty": [
+                426, 
+                426, 
+                481, 
+                481
+            ], 
+            "contrast": 69.934786421279441, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-011.png", 
+            "lineheight": 55.0, 
+            "proba": 0.92369836568832397
+        }, 
+        {
+            "cntx": [
+                10, 
+                879, 
+                879, 
+                10
+            ], 
+            "cnty": [
+                461, 
+                461, 
+                517, 
+                517
+            ], 
+            "contrast": 68.306949318787005, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-012.png", 
+            "lineheight": 56.0, 
+            "proba": 0.9219048023223877
+        }, 
+        {
+            "cntx": [
+                9, 
+                894, 
+                894, 
+                9
+            ], 
+            "cnty": [
+                495, 
+                495, 
+                551, 
+                551
+            ], 
+            "contrast": 65.924354102605648, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-013.png", 
+            "lineheight": 56.0, 
+            "proba": 0.91542458534240723
+        }, 
+        {
+            "cntx": [
+                0, 
+                19, 
+                19, 
+                0
+            ], 
+            "cnty": [
+                535, 
+                535, 
+                564, 
+                564
+            ], 
+            "contrast": 16.49670371114594, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-014.png", 
+            "lineheight": 19.0, 
+            "proba": 0.53066492080688477
+        }, 
+        {
+            "cntx": [
+                7, 
+                894, 
+                894, 
+                7
+            ], 
+            "cnty": [
+                528, 
+                528, 
+                587, 
+                587
+            ], 
+            "contrast": 67.422273617354776, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-015.png", 
+            "lineheight": 59.0, 
+            "proba": 0.90811789035797119
+        }, 
+        {
+            "cntx": [
+                12, 
+                598, 
+                598, 
+                12
+            ], 
+            "cnty": [
+                564, 
+                564, 
+                614, 
+                614
+            ], 
+            "contrast": 63.408241446372863, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-016.png", 
+            "lineheight": 50.0, 
+            "proba": 0.90946811437606812
+        }, 
+        {
+            "cntx": [
+                49, 
+                894, 
+                894, 
+                49
+            ], 
+            "cnty": [
+                666, 
+                666, 
+                721, 
+                721
+            ], 
+            "contrast": 65.881294709180409, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-021.png", 
+            "lineheight": 55.0, 
+            "proba": 0.89118415117263794
+        }, 
+        {
+            "cntx": [
+                4, 
+                851, 
+                851, 
+                4
+            ], 
+            "cnty": [
+                698, 
+                698, 
+                757, 
+                757
+            ], 
+            "contrast": 68.740203779552587, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-022.png", 
+            "lineheight": 59.0, 
+            "proba": 0.90469008684158325
+        }, 
+        {
+            "cntx": [
+                1, 
+                852, 
+                852, 
+                1
+            ], 
+            "cnty": [
+                732, 
+                732, 
+                791, 
+                791
+            ], 
+            "contrast": 69.049543824175913, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-023.png", 
+            "lineheight": 59.0, 
+            "proba": 0.8981398344039917
+        }, 
+        {
+            "cntx": [
+                4, 
+                868, 
+                868, 
+                4
+            ], 
+            "cnty": [
+                767, 
+                767, 
+                823, 
+                823
+            ], 
+            "contrast": 71.532802197949408, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-024.png", 
+            "lineheight": 56.0, 
+            "proba": 0.90008437633514404
+        }, 
+        {
+            "cntx": [
+                2, 
+                875, 
+                875, 
+                2
+            ], 
+            "cnty": [
+                799, 
+                799, 
+                858, 
+                858
+            ], 
+            "contrast": 64.739057721716833, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-025.png", 
+            "lineheight": 59.0, 
+            "proba": 0.89292889833450317
+        }, 
+        {
+            "cntx": [
+                49, 
+                749, 
+                749, 
+                49
+            ], 
+            "cnty": [
+                911, 
+                911, 
+                956, 
+                956
+            ], 
+            "contrast": 66.874123723919723, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-026.png", 
+            "lineheight": 45.0, 
+            "proba": 0.65919417142868042
+        }, 
+        {
+            "cntx": [
+                8, 
+                379, 
+                379, 
+                8
+            ], 
+            "cnty": [
+                940, 
+                940, 
+                982, 
+                982
+            ], 
+            "contrast": 64.62670874771834, 
+            "imgfile": "./result_full/7202ea80b0c520bf1560796f7a4ea92f/7202ea80b0c520bf1560796f7a4ea92f-027.png", 
+            "lineheight": 42.0, 
+            "proba": 0.76094299554824829
+        }
+    ], 
+    "filename": "../data/JAP_jacksonkawasemipg2.jpg", 
+    "md5": "7202ea80b0c520bf1560796f7a4ea92f", 
+    "resize": 1.6071428571428572
+}

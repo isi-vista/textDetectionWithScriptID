@@ -71,18 +71,26 @@ def order_points(pts):
     # bottom-right, and bottom-left order
     return np.array([tl, tr, br, bl], dtype="float32")
 
-def visualize_text_proba_map( img, y, scriptID=None ) :
-    pyplot.figure(figsize=(10,6.7))
+def visualize_text_proba_map( img, y, res, scriptID=None ) :
+    ih, iw = img.shape[:2]
+    fh = 8
+    fw = int( np.round( float(iw)/ih * fh ) )
+    pyplot.figure(figsize=(fw*2, fh*2))
+    pyplot.subplot(221)
     pyplot.imshow( img )
     pyplot.axis('off')
     pyplot.title('Input')
-    pyplot.figure(figsize=(10,6.7))
+    pyplot.subplot(222)
     pyplot.imshow( y)
     pyplot.axis('off')
     pyplot.title('Text Proba Map ' + ( ' scriptID={}'.format( scriptID ) if scriptID is not None else '' ) )
-    pyplot.figure(figsize=(10,6.7))
+    pyplot.subplot(223)
     pyplot.imshow( np.round( np.float32(img) * y).astype('uint8') )
     pyplot.title('Overlaid')
+    pyplot.axis('off')
+    pyplot.subplot(224)
+    pyplot.imshow( res )
+    pyplot.title('Detected Text Regions')
     pyplot.axis('off')
 
 def parse_detection_results( url, output_lut, text_proba=None, script_proba=None, show_region=True) :
@@ -93,9 +101,6 @@ def parse_detection_results( url, output_lut, text_proba=None, script_proba=None
         nh, nw = int(ih*resize_factor), int(iw*resize_factor)
         img = cv2.resize( img, (nw, nh), interpolation=cv2.INTER_AREA if (resize_factor<1) else cv2.INTER_CUBIC )
     # 1. decode proba if necessary
-    if ( script_proba is not None ) and ( text_proba is not None ):
-        scriptID = get_topK_scriptID( script_proba )
-        visualize_text_proba_map( img, text_proba, scriptID )
     for key, val in iteritems(output_lut) :
         if ( 'Pr' in key ) :
             print('{:>20} = {:.2f}'.format(key, val))
@@ -114,9 +119,13 @@ def parse_detection_results( url, output_lut, text_proba=None, script_proba=None
             pyplot.imshow( reg_img )
             pyplot.title('Reg#{:d} : Pr={:.2f} Lh={:.2f} Contrast={:.2f}'.format( idx, proba, lh, contrast ) )
         cv2.polylines( debug, [reg_pts], True, (0,255,0), thickness=5 )
-    pyplot.figure( figsize=(10,10))
-    pyplot.imshow( debug )
-    pyplot.title('detected text regions')
+    if ( script_proba is not None ) and ( text_proba is not None ):
+        scriptID = get_topK_scriptID( script_proba )
+        visualize_text_proba_map( img, text_proba, debug, scriptID )
+    else :
+        pyplot.figure( figsize=(10,10))
+        pyplot.imshow( debug )
+        pyplot.title('detected text regions')
 
 def get_topK_scriptID( script_proba, topK = 2 ) :
     lut = [ 'NonText', 'Latin', 'Hebrew', 'Cyrillic', 'Arabic', 'Chinese', 'TextButUnknown']
@@ -375,7 +384,7 @@ def reject_text_regions( decoded_results, prefix, save_mode='buffer', output_dir
         if ( not os.path.isdir( this_output_dir ) ) :
             os.makedirs( this_output_dir )
     use_para = False
-    try : 
+    try :
         from sklearn.externals.joblib import Parallel, delayed
         use_para = True
     except :
@@ -392,155 +401,6 @@ def reject_text_regions( decoded_results, prefix, save_mode='buffer', output_dir
         if ( this_bbox_lut is not None ) :
             bboxes.append( this_bbox_lut )
     return bboxes
-
-def simple_decoder( file_path,
-                    textDet_model,
-                    scriptID_model=None,
-                    output_dir=None,
-                    dom_font=None,
-                    dark_text=None,
-                    rotated_text=False,
-                    proba_threshold=.5,
-                    lh_threshold=15,
-                    contrast_threshold=24.,
-                    return_proba=True,
-                    n_jobs=1,
-                    verbose=2) :
-    """
-    INPUTS:
-        ------------------------------------------------------------------------
-        | Mandentory Parameters
-        ------------------------------------------------------------------------
-        file_path = str, path to a local file or URL to a web image
-        textDet_model = keras model, pretrained text detection model
-        scriptID_model = None or keras model, pretrained script ID model
-                         if None, then no scriptID classification
-        output_dir = None or str or 'SKIP', dir to save detected and corrected text regions,
-                     if None, then text regions as JPEG buffers
-                     if SKIP, then not save text regions
-        ------------------------------------------------------------------------
-        | Prior Knowledge Parameters (better performance if they are provided)
-        ------------------------------------------------------------------------
-        dom_font = int or None, dominant fontsize height in terms of pixels
-                   if None, then apply automatic estimation
-        dark_text = bool or None, whether texts on image is dark/black or not
-                    if None, then apply automatic estimation
-        rotated_text = bool, whether text regions are rotated or not
-                       if False, then faster decoding is applied
-        ------------------------------------------------------------------------
-        | Simple Rules to Reject A Text Region
-        ------------------------------------------------------------------------
-        proba_threshold = float in (0,1), the minimum text probability to accept a text region
-        lh_threshold = float, the minimum line height to accept a text region
-        contrast_threshold = float in (0,255), the minimum intensity standard deviation to accept a text region
-        ------------------------------------------------------------------------
-        | Others
-        ------------------------------------------------------------------------
-        return_proba = bool, if true, return the raw outputs of both models
-        n_jobs = int, if greater than 1, use multiple CPUs
-        verbose = bool, if true, print out state messages
-
-    OUTPUTS:
-        output_lut = dict, containing all decoded results including
-                     'filename' -> input image file
-                     'resize'   -> resize factor for text detection analysis
-                     'md5'      -> image md5 tag
-                     'Pr(XXX)'  -> script ID probability of a known scriptID class XXX
-                     'bboes'    -> list of bounding box dictionaries, where each element is a dict of
-                           'cntx'     -> bbox's x coordinates
-                           'cnty'     -> bbox's y coordinates
-                           'proba'    -> text probility of this region
-                           'area'     -> bbox area
-                           'contrast' -> bbox contrast
-                           'imgfile'  -> file path the dumped text region image, when output_dir is given
-                           'jpgbuf'   -> jpeg buffer (list of uint8) for the text region image, when output_dir is None
-        proba_map = ( text_proba, script_proba )
-                    - text_proba, i.e. a text probability map of textDet_model, size of imgHeight-by-imgWidth-by-3
-                    - script proba, i.e. a script ID probability map, size of 1-by-7
-    """
-    verbose_print( verbose, "INFO: begin text detection for {}".format( file_path ) )
-    # 1. read image
-    img = read_image( file_path )
-    # 1.b resize image if necessary
-    ih, iw = img.shape[:2]
-    verbose_print( verbose, "INFO: original image size = ({},{})".format( ih, iw ) )
-    # 1.c estimate resize factor
-    target_lh = 22.5
-    if ( dom_font is None ) :
-        paper_name, _ = parse_paper_size( ih, iw )
-        min_lh = compute_fontsize_in_pixels_for_paper( max(ih,iw), font_size=8, paper_name='letter' )
-        max_lh = compute_fontsize_in_pixels_for_paper( max(ih,iw), font_size=48, paper_name='letter' )
-        est_lh = min( max( estimate_dominant_fontsize( img, dark_text, verbose ), min_lh ), max_lh )
-        verbose_print( verbose, "INFO: estimated input doc paper={}".format( paper_name ) )
-        verbose_print( verbose, "INFO: estimated dominant line height on original is {} pixels high".format(est_lh))
-    else :
-        est_lh = float(dom_font)
-    # 1.d compute resize factor
-    resize_factor = max( .33, target_lh/est_lh )# map the dominatant fontsize to 25 pixel high
-    verbose_print( verbose, "INFO: resize input by {:.2f} to match line height {}".format( resize_factor, target_lh ))
-    if ( abs(resize_factor-1)> 0.05 ) :
-        if (resize_factor<1) :
-            method = cv2.INTER_AREA
-        else :
-            method = cv2.INTER_CUBIC
-        nh, nw = int(ih*resize_factor), int(iw*resize_factor)
-        img = cv2.resize( img, (nw, nh), interpolation=method )
-    else :
-        resize_factor = 1
-        nh, nw = ih, iw
-    # 2. convert input image to network tensor
-    verbose_print( verbose, "INFO: begin FCN text detection")
-    x = convert_imageArray_to_inputTensor( img )
-    # 3. predict text probability map
-    text_proba  = textDet_model.predict(x)
-    text_proba = text_proba[0,:nh,:nw] # since we always take one sample at a time
-    if ( scriptID_model is not None ) :
-        script_proba = scriptID_model.predict(x)[0]
-    else :
-        script_proba = None
-    verbose_print( verbose, "INFO: done FCN text detection")
-    # 4. decode individual text bbox
-    membership = text_proba.argmax( axis = -1 )
-    text_mask = (membership==2).astype('uint8')
-    num_regs,labels,reg_stats,centroids = cv2.connectedComponentsWithStats( text_mask, 8, cv2.CV_32S )
-    if ( not rotated_text ) :
-        verbose_print( verbose, "INFO: localize horizontal text bounding boxes" )
-        decoded_results = decode_horizontal_text_bbox( text_proba[...,-1], labels, img, reg_stats )
-    else :
-        verbose_print( verbose, "INFO: localize rotated text bounding boxes" )
-        decoded_results = decode_rotated_text_bbox( text_proba[...,-1], labels, img, reg_stats, n_jobs=n_jobs )
-    # 5. save outputs
-    prefix = '{}'.format( md5( np.ascontiguousarray(img) ).hexdigest() )
-    output_lut = { 'filename' : file_path,
-                   'resize' : np.float64(resize_factor),
-                   'md5' : prefix,}
-    for sid, proba in zip( [ 'NonText', 'Latin', 'Hebrew', 'Cyrillic', 'Arabic', 'Chinese', 'TextButUnknown'], script_proba.astype(np.float64) ) :
-        output_lut['Pr({})'.format( sid ) ] = proba
-    if ( output_dir is None ) :
-        save_mode = 'buffer'
-        verbose_print( verbose, "INFO: begin save detection results, image mode = JPEG buffer")
-    elif ( os.path.isdir( output_dir ) ) :
-        save_mode = 'disk'
-        verbose_print( verbose, "INFO: begin save detection results, image mode = image file path")
-    else :
-        save_mode = None
-        verbose_print( verbose, "INFO: begin save detection results, image mode = skip dump images")
-        verbose_print( verbose+1,"WARNING: only text bboxes are save, but NOT images.")
-    bboxes = reject_text_regions( decoded_results,
-                                  prefix=prefix,
-                                  save_mode=save_mode,
-                                  output_dir=output_dir,
-                                  proba_threshold=proba_threshold,
-                                  contrast_threshold=contrast_threshold,
-                                  lh_threshold=lh_threshold,
-                                  verbose=verbose,
-                                  n_jobs=n_jobs)
-    verbose_print( verbose, "INFO: done text detection for", file_path )
-    output_lut['bboxes'] = bboxes
-    if ( not return_proba ) :
-        return output_lut
-    else :
-        return output_lut, (text_proba, script_proba)
 
 def set_vals_in_image3d( image3d, new_image3d, mask, channel_idx=None ) :
     if ( new_image3d.ndim == 3 ) :
@@ -572,17 +432,11 @@ def text_proba_minmax( text_proba_all ) :
     text_proba = np.dstack([nontext, border*2, text ])
     return text_proba/np.sum(text_proba,axis=-1,keepdims=True)
 
-def lazy_decoder( file_path,
-                  textDet_model,
-                  scriptID_model=None,
-                  num_resolutions=5,
-                  output_dir=None,
-                  proba_threshold=.33,
-                  lh_threshold=8,
-                  contrast_threshold=32.,
-                  return_proba=True,
-                  n_jobs=1,
-                  verbose=2) :
+def lazy_detection( file_path,
+                    textDet_model,
+                    scriptID_model=None,
+                    num_resolutions=5,
+                    verbose=2) :
     """
     INPUTS:
         ------------------------------------------------------------------------
@@ -592,20 +446,9 @@ def lazy_decoder( file_path,
         textDet_model = keras model, pretrained text detection model
         scriptID_model = None or keras model, pretrained script ID model
                          if None, then no scriptID classification
-        output_dir = None or str or 'SKIP', dir to save detected and corrected text regions,
-                     if None, then text regions as JPEG buffers
-                     if SKIP, then not save text regions
-        ------------------------------------------------------------------------
-        | Simple Rules to Reject A Text Region
-        ------------------------------------------------------------------------
-        proba_threshold = float in (0,1), the minimum text probability to accept a text region
-        lh_threshold = float, the minimum line height to accept a text region
-        contrast_threshold = float in (0,255), the minimum intensity standard deviation to accept a text region
         ------------------------------------------------------------------------
         | Others
         ------------------------------------------------------------------------
-        return_proba = bool, if true, return the raw outputs of both models
-        n_jobs = int, if greater than 1, use multiple CPUs
         num_resolutions = int, default 3
         verbose = bool, if true, print out state messages
 
@@ -679,7 +522,7 @@ def lazy_decoder( file_path,
         else :
             script_proba = None
         verbose_print( verbose, "INFO: done text detection for factor", coef)
-        # 3. update                             
+        # 3. update
         text_proba_list.append( np.expand_dims( text_proba, axis=0 ) )
         script_proba_list.append( script_proba )
     # 4. fuse results
@@ -689,17 +532,167 @@ def lazy_decoder( file_path,
     verbose_print( verbose, "INFO: begin minimax decoding")
     text_proba = text_proba_minmax( text_proba_all )
     script_proba = script_proba_minmax( script_proba_all )
-    scriptID = decode_scriptID( script_proba )   
-    # 4. decode individual text bbox
+    scriptID = decode_scriptID( script_proba )
+    verbose_print( verbose, "INFO: done minimax decoding")
+    return 1, text_proba, script_proba
+
+def simple_detection( file_path,
+                      textDet_model,
+                      scriptID_model=None,
+                      dom_font=None,
+                      dark_text=None,
+                      verbose=2) :
+    """
+    INPUTS:
+        ------------------------------------------------------------------------
+        | Mandentory Parameters
+        ------------------------------------------------------------------------
+        file_path = str, path to a local file or URL to a web image
+        textDet_model = keras model, pretrained text detection model
+        scriptID_model = None or keras model, pretrained script ID model
+                         if None, then no scriptID classification
+        ------------------------------------------------------------------------
+        | Prior Knowledge Parameters (better performance if they are provided)
+        ------------------------------------------------------------------------
+        dom_font = int or None, dominant fontsize height in terms of pixels
+                   if None, then apply automatic estimation
+        dark_text = bool or None, whether texts on image is dark/black or not
+                    if None, then apply automatic estimation
+        ------------------------------------------------------------------------
+        | Others
+        ------------------------------------------------------------------------
+        verbose = bool, if true, print out state messages
+
+    OUTPUTS:
+        resize_factor = float, resize factor for analysis
+        text_proba = np.ndarray, a text probability map of textDet_model, size of imgHeight-by-imgWidth-by-3
+        script_proba = np.ndarray, a script ID probability map, size of 1-by-7
+    """
+    verbose_print( verbose, "INFO: begin text detection for {}".format( file_path ) )
+    # 1. read image
+    img = read_image( file_path )
+    # 1.b resize image if necessary
+    ih, iw = img.shape[:2]
+    verbose_print( verbose, "INFO: original image size = ({},{})".format( ih, iw ) )
+    # 1.c estimate resize factor
+    target_lh = 22.5
+    if ( dom_font is None ) :
+        paper_name, _ = parse_paper_size( ih, iw )
+        min_lh = compute_fontsize_in_pixels_for_paper( max(ih,iw), font_size=8, paper_name='letter' )
+        max_lh = compute_fontsize_in_pixels_for_paper( max(ih,iw), font_size=48, paper_name='letter' )
+        est_lh = min( max( estimate_dominant_fontsize( img, dark_text, verbose ), min_lh ), max_lh )
+        verbose_print( verbose, "INFO: estimated input doc paper={}".format( paper_name ) )
+        verbose_print( verbose, "INFO: estimated dominant line height on original is {} pixels high".format(est_lh))
+    else :
+        est_lh = float(dom_font)
+    # 1.d compute resize factor
+    resize_factor = max( .33, target_lh/est_lh )# map the dominatant fontsize to 25 pixel high
+    verbose_print( verbose, "INFO: resize input by {:.2f} to match line height {}".format( resize_factor, target_lh ))
+    if ( abs(resize_factor-1)> 0.05 ) :
+        if (resize_factor<1) :
+            method = cv2.INTER_AREA
+        else :
+            method = cv2.INTER_CUBIC
+        nh, nw = int(ih*resize_factor), int(iw*resize_factor)
+        img = cv2.resize( img, (nw, nh), interpolation=method )
+    else :
+        resize_factor = 1
+        nh, nw = ih, iw
+    # 2. convert input image to network tensor
+    verbose_print( verbose, "INFO: begin FCN text detection")
+    x = convert_imageArray_to_inputTensor( img )
+    # 3. predict text probability map
+    text_proba  = textDet_model.predict(x)
+    text_proba = text_proba[0,:nh,:nw] # since we always take one sample at a time
+    if ( scriptID_model is not None ) :
+        script_proba = scriptID_model.predict(x)[0]
+    else :
+        script_proba = None
+    verbose_print( verbose, "INFO: done FCN text detection")
+    return resize_factor, text_proba, script_proba
+
+
+def dump_results( file_path,
+                  text_proba,
+                  script_proba,
+                  resize_factor=1,
+                  output_dir=None,
+                  rotated_text=False,
+                  proba_threshold=.5,
+                  lh_threshold=15,
+                  contrast_threshold=24.,
+                  n_jobs=1,
+                  verbose=0) :
+    """
+    INPUTS:
+        ------------------------------------------------------------------------
+        | Mandentory Parameters
+        ------------------------------------------------------------------------
+        file_path = str, url or file path to the raw image
+        text_proba = np.ndarray, text probability map, output of simple/lazy detection
+        script_proba = np.ndarray, scriptID probabilities, output of simple/lazy detection
+        resize_factor = float, resize factor for text detection
+        output_dir = None or str or 'SKIP', dir to save detected and corrected text regions,
+                     if None, then text regions as JPEG buffers
+                     if SKIP, then not save text regions
+        ------------------------------------------------------------------------
+        | Decoder Settings
+        ------------------------------------------------------------------------
+        rotated_text = bool, whether text regions are rotated or not
+                       if False, then faster decoding is applied
+        ------------------------------------------------------------------------
+        | Simple Rules to Reject A Text Region
+        ------------------------------------------------------------------------
+        proba_threshold = float in (0,1), the minimum text probability to accept a text region
+        lh_threshold = float, the minimum line height to accept a text region
+        contrast_threshold = float in (0,255), the minimum intensity standard deviation to accept a text region
+
+   OUTPUTS:
+        output_lut = dict
+                     containing all decoded results including
+                     'filename' -> input image file
+                     'resize'   -> resize factor for text detection analysis
+                     'md5'      -> image md5 tag
+                     'Pr(XXX)'  -> script ID probability of a known scriptID class XXX
+                     'bboes'    -> list of bounding box dictionaries, where each element is a dict of
+                           'cntx'     -> bbox's x coordinates
+                           'cnty'     -> bbox's y coordinates
+                           'proba'    -> text probility of this region
+                           'area'     -> bbox area
+                           'contrast' -> bbox contrast
+                           'imgfile'  -> file path the dumped text region image, when output_dir is given
+                           'jpgbuf'   -> jpeg buffer (list of uint8) for the text region image, when output_dir is None
+    NOTE:
+        if (output_dir is not None), write "${output_dir}/${prefix}.json" to disk
+
+    """
+    verbose_print( verbose, "INFO: begin results dumping" )
+    # 1. read image
+    img = read_image( file_path )
+    ih, iw = img.shape[:2]
+    verbose_print( verbose, "INFO: original image size = ({},{})".format( ih, iw ) )
+    th, tw = text_proba.shape[:2]
+    if ( (ih,iw)!=(th,tw) ) :
+        if (th<ih) :
+            method = cv2.INTER_AREA
+        else :
+            method = cv2.INTER_CUBIC
+        img = cv2.resize( img, (tw, th),interpolation=method )
+    verbose_print( verbose, "INFO: resize image size = ({},{})".format( th, tw ) )
+    # 2. decode individual text bbox
     membership = text_proba.argmax( axis = -1 )
     text_mask = (membership==2).astype('uint8')
     num_regs,labels,reg_stats,centroids = cv2.connectedComponentsWithStats( text_mask, 8, cv2.CV_32S )
-    verbose_print( verbose, "INFO: localize rotated text bounding boxes" )
-    decoded_results = decode_rotated_text_bbox( text_proba[...,-1], labels, img, reg_stats, n_jobs=n_jobs )
-    # 5. save outputs
+    if ( not rotated_text ) :
+        verbose_print( verbose, "INFO: localize horizontal text bounding boxes" )
+        decoded_results = decode_horizontal_text_bbox( text_proba[...,-1], labels, img, reg_stats )
+    else :
+        verbose_print( verbose, "INFO: localize rotated text bounding boxes" )
+        decoded_results = decode_rotated_text_bbox( text_proba[...,-1], labels, img, reg_stats, n_jobs=n_jobs )
+    # 3. save outputs
     prefix = '{}'.format( md5( np.ascontiguousarray(img) ).hexdigest() )
     output_lut = { 'filename' : file_path,
-                   'resize' : np.float64(1.),
+                   'resize' : np.float64(resize_factor),
                    'md5' : prefix,}
     for sid, proba in zip( [ 'NonText', 'Latin', 'Hebrew', 'Cyrillic', 'Arabic', 'Chinese', 'TextButUnknown'], script_proba.astype(np.float64) ) :
         output_lut['Pr({})'.format( sid ) ] = proba
@@ -724,10 +717,175 @@ def lazy_decoder( file_path,
                                   n_jobs=n_jobs)
     verbose_print( verbose, "INFO: done text detection for", file_path )
     output_lut['bboxes'] = bboxes
-    if ( not return_proba ) :
-        return output_lut
+    # 4. return value
+    if ( output_dir is not None ) :
+        output_json = os.path.join( output_dir, prefix + '.json' )
+        json.dump( output_lut, open( output_json, 'w'), sort_keys=True, indent=4 )
+        verbose_print( verbose, "INFO: successfully dump decoded results to file", output_json )
+    return output_lut
+
+def simple_decoder( file_path,
+                    textDet_model,
+                    scriptID_model=None,
+                    output_dir=None,
+                    dom_font=None,
+                    dark_text=None,
+                    rotated_text=False,
+                    proba_threshold=.5,
+                    lh_threshold=15,
+                    contrast_threshold=24.,
+                    return_proba=True,
+                    n_jobs=1,
+                    verbose=2) :
+    """
+    INPUTS:
+        ------------------------------------------------------------------------
+        | Mandentory Parameters
+        ------------------------------------------------------------------------
+        file_path = str, path to a local file or URL to a web image
+        textDet_model = keras model, pretrained text detection model
+        scriptID_model = None or keras model, pretrained script ID model
+                         if None, then no scriptID classification
+        output_dir = None or str or 'SKIP', dir to save detected and corrected text regions,
+                     if None, then text regions as JPEG buffers
+                     if SKIP, then not save text regions
+        ------------------------------------------------------------------------
+        | Prior Knowledge Parameters (better performance if they are provided)
+        ------------------------------------------------------------------------
+        dom_font = int or None, dominant fontsize height in terms of pixels
+                   if None, then apply automatic estimation
+        dark_text = bool or None, whether texts on image is dark/black or not
+                    if None, then apply automatic estimation
+        rotated_text = bool, whether text regions are rotated or not
+                       if False, then faster decoding is applied
+        ------------------------------------------------------------------------
+        | Simple Rules to Reject A Text Region
+        ------------------------------------------------------------------------
+        proba_threshold = float in (0,1), the minimum text probability to accept a text region
+        lh_threshold = float, the minimum line height to accept a text region
+        contrast_threshold = float in (0,255), the minimum intensity standard deviation to accept a text region
+        ------------------------------------------------------------------------
+        | Others
+        ------------------------------------------------------------------------
+        return_proba = bool, if true, return the raw outputs of both models
+        n_jobs = int, if greater than 1, use multiple CPUs
+        verbose = bool, if true, print out state messages
+
+    OUTPUTS:
+        output_lut = dict, containing all decoded results including
+                     'filename' -> input image file
+                     'resize'   -> resize factor for text detection analysis
+                     'md5'      -> image md5 tag
+                     'Pr(XXX)'  -> script ID probability of a known scriptID class XXX
+                     'bboes'    -> list of bounding box dictionaries, where each element is a dict of
+                           'cntx'     -> bbox's x coordinates
+                           'cnty'     -> bbox's y coordinates
+                           'proba'    -> text probility of this region
+                           'area'     -> bbox area
+                           'contrast' -> bbox contrast
+                           'imgfile'  -> file path the dumped text region image, when output_dir is given
+                           'jpgbuf'   -> jpeg buffer (list of uint8) for the text region image, when output_dir is None
+        proba_map = ( text_proba, script_proba )
+                    - text_proba, i.e. a text probability map of textDet_model, size of imgHeight-by-imgWidth-by-3
+                    - script proba, i.e. a script ID probability map, size of 1-by-7
+    """
+    resize_factor, text_proba, script_proba = simple_detection( file_path,
+                                                                textDet_model,
+                                                                scriptID_model,
+                                                                dom_font=dom_font,
+                                                                dark_text=dark_text,
+                                                                verbose=verbose)
+    ret = dump_results( file_path,
+                        text_proba,
+                        script_proba,
+                        resize_factor,
+                        output_dir=output_dir,
+                        rotated_text=rotated_text,
+                        proba_threshold=proba_threshold,
+                        lh_threshold=lh_threshold,
+                        contrast_threshold=contrast_threshold,
+                        n_jobs=n_jobs,
+                        verbose=verbose)
+    if ( return_proba ) :
+        return ret, (text_proba, script_proba)
     else :
-        return output_lut, (text_proba, script_proba)
+        return ret
+
+def lazy_decoder( file_path,
+                  textDet_model,
+                  scriptID_model=None,
+                  num_resolutions=5,
+                  output_dir=None,
+                  proba_threshold=.33,
+                  lh_threshold=8,
+                  contrast_threshold=32.,
+                  return_proba=True,
+                  n_jobs=1,
+                  verbose=2) :
+    """
+    INPUTS:
+        ------------------------------------------------------------------------
+        | Mandentory Parameters
+        ------------------------------------------------------------------------
+        file_path = str, path to a local file or URL to a web image
+        textDet_model = keras model, pretrained text detection model
+        scriptID_model = None or keras model, pretrained script ID model
+                         if None, then no scriptID classification
+        output_dir = None or str or 'SKIP', dir to save detected and corrected text regions,
+                     if None, then text regions as JPEG buffers
+                     if SKIP, then not save text regions
+        ------------------------------------------------------------------------
+        | Simple Rules to Reject A Text Region
+        ------------------------------------------------------------------------
+        proba_threshold = float in (0,1), the minimum text probability to accept a text region
+        lh_threshold = float, the minimum line height to accept a text region
+        contrast_threshold = float in (0,255), the minimum intensity standard deviation to accept a text region
+        ------------------------------------------------------------------------
+        | Others
+        ------------------------------------------------------------------------
+        return_proba = bool, if true, return the raw outputs of both models
+        n_jobs = int, if greater than 1, use multiple CPUs
+        num_resolutions = int, default 5
+        verbose = bool, if true, print out state messages
+
+    OUTPUTS:
+        output_lut = dict, containing all decoded results including
+                     'filename' -> input image file
+                     'resize'   -> resize factor for text detection analysis
+                     'md5'      -> image md5 tag
+                     'Pr(XXX)'  -> script ID probability of a known scriptID class XXX
+                     'bboes'    -> list of bounding box dictionaries, where each element is a dict of
+                           'cntx'     -> bbox's x coordinates
+                           'cnty'     -> bbox's y coordinates
+                           'proba'    -> text probility of this region
+                           'area'     -> bbox area
+                           'contrast' -> bbox contrast
+                           'imgfile'  -> file path the dumped text region image, when output_dir is given
+                           'jpgbuf'   -> jpeg buffer (list of uint8) for the text region image, when output_dir is None
+        proba_map = ( text_proba, script_proba )
+                    - text_proba, i.e. a text probability map of textDet_model, size of imgHeight-by-imgWidth-by-3
+                    - script proba, i.e. a script ID probability map, size of 1-by-7
+    """
+    resize_factor, text_proba, script_proba = lazy_detection( file_path,
+                                                              textDet_model,
+                                                              scriptID_model,
+                                                              num_resolutions=num_resolutions,
+                                                              verbose=2)
+    ret = dump_results( file_path,
+                        text_proba,
+                        script_proba,
+                        resize_factor,
+                        output_dir=output_dir,
+                        rotated_text=True,
+                        proba_threshold=proba_threshold,
+                        lh_threshold=lh_threshold,
+                        contrast_threshold=contrast_threshold,
+                        n_jobs=n_jobs,
+                        verbose=verbose)
+    if ( return_proba ) :
+        return ret, (text_proba, script_proba)
+    else :
+        return ret
 
 ####################################################################################################
 # DON'T Change Any Code Beyond This Line
