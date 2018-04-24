@@ -329,7 +329,7 @@ def decode_rotated_text_bbox( text_proba, text_label, img, reg_stats, n_jobs=8 )
         try :
             # use parallel process
             results = Parallel( n_jobs=n_jobs, verbose=0, backend='threading' )( delayed( decode_one_bbox )( text_proba, text_label, img, reg_stats, reg_idx ) for reg_idx in all_reg_indices )
-            return filter( lambda r : r is not None, results )
+            return list(filter( lambda r : r is not None, results ))
         except :
             pass
     results = []
@@ -391,7 +391,7 @@ def reject_text_regions( decoded_results, prefix, save_mode='buffer', output_dir
     if use_para :
         try :
             bboxes = Parallel( n_jobs=n_jobs, verbose=0, backend='threading')( delayed( reject_one_text_region )( idx, bbox_dec_result, prefix, save_mode, this_output_dir, proba_threshold, contrast_threshold, lh_threshold, verbose=0 ) for idx, bbox_dec_result in enumerate( decoded_results ) )
-            return filter( lambda b : b is not None, bboxes )
+            return list(filter( lambda b : b is not None, bboxes ))
         except :
             pass
     bboxes = []
