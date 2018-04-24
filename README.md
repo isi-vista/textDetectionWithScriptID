@@ -253,15 +253,7 @@ You may find ipython2 notebook under `notebook`. Alternatively, you are welcome 
 - [python2 notebook](https://drive.google.com/file/d/1uhcA6nYZoBcHmEdnJUHLp4WeXsPN6OIB/view?usp=sharing)
 - [python3 notebook](https://drive.google.com/file/d/13TRD6yeBtCo2IP5tJklvwpJcy91jXyJD/view?usp=sharing)
 
-# 5. Sample Results
-Below we show our text detection results on samples used in `stackoverflow` questions.
-
-![https://stackoverflow.com/questions/48982168/python-unique-text-detection-method/50011521#50011521](https://i.stack.imgur.com/Ota8x.jpg)
-![https://stackoverflow.com/questions/24385714/detect-text-region-in-image-using-opencv]()
-![https://stackoverflow.com/questions/4707607/what-are-good-algorithms-for-vehicle-license-plate-detection/4719545#4719545]()
-![https://stackoverflow.com/questions/42747744/opencv-detect-extract-text-in-images]()
-
-# 6. Citation and Contact
+# 5. Citation and Contact
 If you use this repo for academic purposes, please cite the following paper.
 
 ```latex
