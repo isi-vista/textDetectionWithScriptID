@@ -201,33 +201,43 @@ Finally, we also provide a command-line tool for text detection.
 
 ```shell
 python bin/textDetection.py -h
-usage: textDetection.py [-h] [-i INPUT_FILES] [-o OUTPUT_DIR] [-v VERBOSE]
-			[-tl TH_LINEHEIGHT] [-tp TH_TEXTPROB]
-			[-tc TH_CONTRAST] [-m {doc0,doc1,scene,custom}]
-			[-mt {line,word}] [-dt {simple,lazy}] [-nj N_JOBS]
-			[-nr N_RES] [--domFont DOM_FONT] [--darkText]
-			[--rotText] [--jpegBuffer] [--version]
+usage: textDetection.py [-h] [-i INPUT_FILES] [-o OUTPUT_DIR]
+                        [-t {full,textDet,postProc}]
+                        [-m {doc0,doc1,scene,custom}] [-v VERBOSE]
+                        [-tl TH_LINEHEIGHT] [-tp TH_TEXTPROB]
+                        [-tc TH_CONTRAST] [-mt {line,word}]
+                        [-dt {simple,lazy}] [-nj N_JOBS] [-nr N_RES]
+                        [--domFont DOM_FONT] [--darkText] [--rotText]
+                        [--jpegBuffer] [--version]
 
 Text Detection with ScriptID supports
 
 optional arguments:
   -h, --help            show this help message and exit
-  -i INPUT_FILES        input test image files
-  -o OUTPUT_DIR         output detection dir (./)
+
+required arguments:
+  -i INPUT_FILES, --inputFile INPUT_FILES
+                        input test image files or cached json files
+  -o OUTPUT_DIR, --outputDir OUTPUT_DIR
+                        output detection dir (./)
+  -t {full,textDet,postProc}, --task {full,textDet,postProc}
+                        tasks in {full, textDet, postProc}
+
+optional arguments:
+  -m {doc0,doc1,scene,custom}, --mode {doc0,doc1,scene,custom}
+                        working mode in {doc0(black and horizontal text),
+                        doc1(black text), scene, custom}
   -v VERBOSE            verbosity level (0), higher means more print outs
   -tl TH_LINEHEIGHT, --threshLineHeight TH_LINEHEIGHT
-			minimal text region height (15)
+                        minimal text region height (15)
   -tp TH_TEXTPROB, --threshTextProba TH_TEXTPROB
-			minimal text region probability (.5)
+                        minimal text region probability (.5)
   -tc TH_CONTRAST, --threshContrast TH_CONTRAST
-			minimal text region contrast (16)
-  -m {doc0,doc1,scene,custom}, --mode {doc0,doc1,scene,custom}
-			working mode in {doc0(black and horizontal text),
-			doc1(black text), scene, custom}
+                        minimal text region contrast (16)
   -mt {line,word}, --modelType {line,word}
-			detector type in {line, word}
-  -dt {simple,lazy}, --decType {simple,lazy}
-			decoder type in {simple, lazy}
+                        detector type in {line, word}
+  -dt {simple,lazy}, --decoderType {simple,lazy}
+                        decoder type in {simple, lazy}
   -nj N_JOBS, --nJobs N_JOBS
                         number of parallel cpu jobs
   -nr N_RES, --nRes N_RES
