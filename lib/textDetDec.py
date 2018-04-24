@@ -356,8 +356,8 @@ def reject_one_text_region( idx, bbox_dec_result, prefix, save_mode='buffer', ou
     if ( contrast < contrast_threshold ) :
         verbose_print( verbose, "INFO: reject #", idx, "due to low contrast,", contrast, "<", contrast_threshold)
         return None
-    cnt_x = [ pt[0] for pt in np.round( cnt ).astype(np.int) ]
-    cnt_y = [ pt[1] for pt in np.round( cnt ).astype(np.int) ]
+    cnt_x = [ np.int(pt[0]) for pt in np.round( cnt ) ]
+    cnt_y = [ np.int(pt[1]) for pt in np.round( cnt ) ]
     this_bbox_lut = { 'cntx' : cnt_x,
                       'cnty' : cnt_y,
                       'proba' : np.float64(proba),
