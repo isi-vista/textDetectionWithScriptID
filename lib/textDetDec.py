@@ -71,9 +71,8 @@ def order_points(pts):
     # bottom-right, and bottom-left order
     return np.array([tl, tr, br, bl], dtype="float32")
 
-def visualize_text_proba_map( img, y, res, scriptID=None ) :
+def visualize_text_proba_map( img, y, res, scriptID=None, fh=8 ) :
     ih, iw = img.shape[:2]
-    fh = 8
     fw = int( np.round( float(iw)/ih * fh ) )
     pyplot.figure(figsize=(fw*2, fh*2))
     pyplot.subplot(221)
@@ -93,7 +92,7 @@ def visualize_text_proba_map( img, y, res, scriptID=None ) :
     pyplot.title('Detected Text Regions')
     pyplot.axis('off')
 
-def parse_detection_results( url, output_lut, text_proba=None, script_proba=None, show_region=True) :
+def parse_detection_results( url, output_lut, text_proba=None, script_proba=None, show_region=True, fh=8) :
     img = read_image( url )
     ih, iw = img.shape[:2]
     resize_factor = output_lut['resize']
@@ -121,7 +120,7 @@ def parse_detection_results( url, output_lut, text_proba=None, script_proba=None
         cv2.polylines( debug, [reg_pts], True, (0,255,0), thickness=5 )
     if ( script_proba is not None ) and ( text_proba is not None ):
         scriptID = get_topK_scriptID( script_proba )
-        visualize_text_proba_map( img, text_proba, debug, scriptID )
+        visualize_text_proba_map( img, text_proba, debug, scriptID, fh=fh )
     else :
         pyplot.figure( figsize=(10,10))
         pyplot.imshow( debug )
