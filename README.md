@@ -248,6 +248,11 @@ optional arguments:
   --jpegBuffer          whether or not save image inside json
   --version             show program's version number and exit
 ```
+## 4.4 Demo Code
+You may find ipython2 notebook under `notebook`. Alternatively, you are welcome to use our provided google colab notebooks (open and clone your own)
+- [python2 notebook](https://drive.google.com/file/d/1uhcA6nYZoBcHmEdnJUHLp4WeXsPN6OIB/view?usp=sharing)
+- [python3 notebook](https://drive.google.com/file/d/13TRD6yeBtCo2IP5tJklvwpJcy91jXyJD/view?usp=sharing)
+
 
 # 5. Citation and Contact
 If you use this repo for academic purposes, please cite the following paper.
