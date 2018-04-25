@@ -256,7 +256,7 @@ mkdir tmp && cd tmp
 # find some testing data
 find ../data/ -name "*_*.jpg" > test.list
 # run text detection and save text images using the doc0 mode
-python ../bin/textDetection.py  -i test.list -o /tmp/result_detOnly -t textDet -m doc0 -v 2
+python ../bin/textDetection.py  -i test.list -o /tmp/result_detOnly -t full -m doc0 -v 2
 ```
 
 ## 4.4 Demo Code
