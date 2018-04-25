@@ -45,13 +45,14 @@ This repo contains the following data
 - `bin` : Python2/3 command-line tool.
 
 ## 3. Dependency
-This repo depends on the core deep learning libraries
+The python code in this repo is compatible with both Python2.7x and Python3. It depends on the core deep learning libraries
 - `Keras`: >=2.0.7
 - `TensorFlow`: >=1.1.0
 
-and image processing libraries
+and image processing libraries.
 - `OpenCV-Python`: >=3.1.0
 - `Skimage`: >= 0.13.0
+
 
 ## 4. Usage
 ### 4.1 Basic Models
@@ -120,7 +121,7 @@ def simple_decoder( file_path,
                          'resize'   -> resize factor for text detection analysis
                          'md5'      -> image md5 tag
                          'Pr(XXX)'  -> script ID probability of a known scriptID class XXX
-                         'bboes'    -> list of bounding box dictionaries, where each element is a dict of
+                         'bboxes'    -> list of bounding box dictionaries, where each element is a dict of
                                'cntx'     -> bbox's x coordinates
                                'cnty'     -> bbox's y coordinates
                                'proba'    -> text probility of this region
@@ -182,7 +183,7 @@ def lazy_decoder( file_path,
                      'resize'   -> resize factor for text detection analysis
                      'md5'      -> image md5 tag
                      'Pr(XXX)'  -> script ID probability of a known scriptID class XXX
-                     'bboes'    -> list of bounding box dictionaries, where each element is a dict of
+                     'bboxes'    -> list of bounding box dictionaries, where each element is a dict of
                            'cntx'     -> bbox's x coordinates
                            'cnty'     -> bbox's y coordinates
                            'proba'    -> text probility of this region
@@ -248,6 +249,16 @@ optional arguments:
   --jpegBuffer          whether or not save image inside json
   --version             show program's version number and exit
 ```
+Below is sample testing code that you may want to try
+```shell
+# make a tmp dir to host data
+mkdir tmp && cd tmp
+# find some testing data
+find ../data/ -name "*_*.jpg" > test.list
+# run text detection and save text images using the doc0 mode
+python ../bin/textDetection.py  -i test.list -o /tmp/result_detOnly -t textDet -m doc0 -v 2
+```
+
 ## 4.4 Demo Code
 You may find ipython2 notebook under `notebook`. Alternatively, you are welcome to use our provided google colab notebooks (open and clone your own)
 - [python2 notebook](https://drive.google.com/file/d/1uhcA6nYZoBcHmEdnJUHLp4WeXsPN6OIB/view?usp=sharing)
