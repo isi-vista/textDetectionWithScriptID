@@ -273,10 +273,7 @@ author={Y. Wu and P. Natarajan},
 booktitle={2017 IEEE International Conference on Computer Vision (ICCV)}, 
 title={Self-Organized Text Detection with Minimal Post-processing via Border Learning}, 
 year={2017}, 
-volume={}, 
-number={}, 
 pages={5010-5019}, doi={10.1109/ICCV.2017.535}, 
-ISSN={}, 
 month={Oct},}
 ```
 
